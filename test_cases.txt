@@ -1,0 +1,97 @@
+# Test Cases – Student Grade Calculator
+
+This document contains test cases executed for the Student Grade Calculator program.
+
+# Test Case 1: Grade A (Outstanding)
+Input:
+Student Name: Rahul
+Marks: 95
+Expected Output:
+RESULT OF RAHUL:
+MARKS: 95/100
+Grade: A
+Message: Outstanding! 🌟 Keep shining! 🎉
+
+
+# Test Case 2: Grade B (Very Good)
+Input:
+Student Name: Priya
+Marks: 85
+Expected Output:
+RESULT OF PRIYA:
+MARKS: 85/100
+Grade: B
+Message: Very Good! 👍 Keep it up! 🔥
+
+
+# Test Case 3: Grade C (Good Effort)
+Input:
+Student Name: Aman
+Marks: 75
+Expected Output:
+RESULT OF AMAN:
+MARKS: 75/100
+Grade: C
+Message: Good effort! 😃 Keep improving! 💪
+
+
+# Test Case 4: Grade D (Nice Try)
+Input:
+Student Name: Neha
+Marks: 65
+Expected Output:
+RESULT OF NEHA:
+MARKS: 65/100
+Grade: D
+Message: Nice try! ✨ Keep practicing! 📚
+
+
+#Test Case 5: Grade F (Needs Improvement)
+Input:
+Student Name: Karan
+Marks: 40
+Expected Output:
+RESULT OF KARAN:
+MARKS: 40/100
+Grade: F
+Message: Don’t give up! 🌱 Work harder and you’ll succeed! 💡
+
+
+# Test Case 6: Invalid Marks (Below 0)
+Input:
+Student Name: Riya
+Marks: -5
+Expected Behavior:
+Program displays:
+invalid marks! Enter marks between 0 to 100.
+User is prompted again for marks
+Accepts valid marks only
+
+
+# Test Case 7: Invalid Marks (Above 100)
+Input:
+Student Name: Arjun
+Marks: 120
+Expected Behavior:
+Program displays:
+invalid marks! Enter marks between 0 to 100.
+Repeats input until marks are between 0–100
+
+
+# Test Case 8: Boundary Value (Minimum Marks)
+Input:
+Student Name: Sneha
+Marks: 0
+Expected Output:
+Grade: F
+Message: Don’t give up! 🌱 Work harder and you’ll succeed! 💡
+
+
+# Test Case 9: Boundary Value (Maximum Marks)
+Input:
+Student Name: Mohit
+Marks: 100
+Expected Output:
+Grade: A
+Message: Outstanding! 🌟 Keep shining! 🎉
+
