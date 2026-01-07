@@ -1,9 +1,2 @@
-Functions and Methods Used:
-
--pd.read_csv() to load the CSV dataset
--df.shape, df.columns, df.dtypes to explore the dataset
--df.isnull() and df.isnull().sum() to check missing values
--sum(), mean(), max(), min() to calculate sales metrics
--groupby() and idxmax() to find the best-selling product
--print() to display a formatted report
-
+pandas
+matplotlib
