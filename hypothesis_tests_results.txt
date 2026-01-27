@@ -1,0 +1,4 @@
+===== STATISTICAL ANALYSIS REPORT =====
+Average Sales: $123,650 ± $19,874 (95% CI)
+Correlation (Sales-Marketing): 0.65 (Moderate)
+Marketing affects sales: p = 0.0000 ✓ SIGNIFICANT
