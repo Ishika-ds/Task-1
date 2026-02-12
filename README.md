@@ -1,155 +1,117 @@
-# Task 8
-# Customer Churn Business Analysis Project
+#  House Price Prediction using Machine Learning
 
-## Project Overview
-This project presents a complete end-to-end business analysis focused on understanding customer behavior and churn patterns. The objective is to analyze customer data, identify key factors influencing churn, and provide data-driven recommendations with a clear business implementation plan.
+##  Project Overview
 
-The project follows a structured analytics workflow including data collection, data cleaning, exploratory data analysis (EDA), advanced statistical analysis, visualization, and insight generation using Python.
+This project builds and compares multiple Machine Learning models to predict house prices based on property features such as:
 
----
+- Area  
+- Bedrooms  
+- Bathrooms  
+- Age  
+- Location  
+- Property Type  
 
-## Objectives
-- Analyze customer churn behavior using real business data
-- Perform data cleaning and preprocessing for accurate analysis
-- Conduct exploratory and statistical analysis
-- Create professional visualizations for business interpretation
-- Generate actionable insights and recommendations for decision-making
+The objective is to analyze model performance and determine the best regression model for accurate price prediction.
 
 ---
 
-## Dataset
-The dataset used in this project is:
+## 🛠️ Technologies Used
 
-**customer_churn.csv**
-
-### Dataset Details
-- Rows: 500+
-- Type: Structured business data
-
-### Columns:
-- **Tenure** – Length of customer relationship
-- **MonthlyCharges** – Monthly charges paid by the customer
-- **TotalCharges** – Total amount billed
-- **Contract** – Contract type
-- **PaymentMethod** – Mode of payment
-- **PaperlessBilling** – Paperless billing status
-- **SeniorCitizen** – Senior citizen indicator
-- **Churn** – Customer churn status (Yes / No)
+- Python  
+- Pandas  
+- NumPy  
+- Matplotlib  
+- Scikit-learn  
 
 ---
 
-## Project Structure
-├── data/
-│ ├── raw_data.csv
-│ └── cleaned_data.csv
-├── notebooks/
-│ ├── 1_data_cleaning.ipynb
-│ ├── 2_eda.ipynb
-│ └── 3_analysis.ipynb
-├── reports/
-│ ├── executive_summary.pdf
-│ └── technical_report.pdf
-├── presentations/
-│ └── business_presentation.pptx
-├── requirements.txt
-└── README.md
+##  Project Structure
+
+-house_prices.csv
+-9th_task.py
+-model_evaluation_report.md
+-predictions_vs_actual.png
+
 
 ---
 
-## Analysis Workflow
+##  Implementation Workflow
 
-### Phase 1: Data Cleaning
-- Verified dataset structure and quality
-- Checked and confirmed absence of missing values
-- Encoded categorical variables for analysis
-- Saved cleaned data for reuse
-
-Notebook: `notebooks/1_data_cleaning.ipynb`
-
----
-
-### Phase 2: Exploratory Data Analysis (EDA)
-- Distribution analysis of numerical variables
-- Comparative analysis of churned vs non-churned customers
-- Correlation analysis using heatmaps
-- Identification of patterns affecting churn
-
-Notebook: `notebooks/2_eda.ipynb`
+1. Data Loading and Exploration  
+2. Data Preprocessing  
+   - Handling missing values  
+   - Encoding categorical variables  
+3. Train-Test Split (80% Training, 20% Testing)  
+4. Model Training:
+   - Linear Regression  
+   - Decision Tree Regressor  
+   - Random Forest Regressor  
+5. Model Evaluation using:
+   - Mean Absolute Error (MAE)  
+   - Mean Squared Error (MSE)  
+   - R² Score  
+6. Feature Importance Analysis  
+7. Visualization of Predictions vs Actual Prices  
 
 ---
 
-### Phase 3: Advanced Analysis
-- Statistical analysis of customer segments
-- Validation of business assumptions
-- Interpretation of analytical results
+##  Model Performance
 
-Notebook: `notebooks/3_analysis.ipynb`
-
----
-
-## Visualizations
-The project includes more than five professional visualizations:
-- Histograms for charges distribution
-- Bar charts for churn comparison
-- Correlation heatmaps
-- Categorical analysis plots
-- Trend-based visual representations
-
-All visualizations were generated using **matplotlib** and **seaborn**.
+| Model | MAE | MSE | R² Score |
+|-------|------|-------------|-----------|
+| Linear Regression | 2,188,736 | 8.45e12 | 0.9406 |
+| Decision Tree | 2,280,000 | 9.16e12 | 0.9356 |
+| Random Forest | **1,493,949** | **4.12e12** | **0.9711** |
 
 ---
 
-## Tools and Technologies
-- Python
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- scikit-learn
-- Jupyter Notebook
+##  Best Model
+
+**Random Forest Regressor**
+
+- Lowest MAE and MSE  
+- Highest R² score (97.11%)  
+- Provides meaningful feature importance  
 
 ---
 
-## Key Insights
-- Customers with higher monthly charges are more likely to churn
-- Contract type has a strong impact on customer retention
-- Long-tenure customers show lower churn probability
-- Billing and payment methods influence customer behavior
+##  Feature Importance (Random Forest)
+
+1. Area – Most influential feature  
+2. Location (Rural, Suburb)  
+3. Bedrooms  
+4. Age  
+5. Bathrooms  
+6. Property Type  
 
 ---
 
-## Business Recommendations
-- Introduce retention offers for high monthly charge customers
-- Encourage customers to opt for long-term contracts
-- Improve customer engagement for new customers
-- Optimize payment and billing options to enhance retention
+##  Visualization
+
+The project includes a scatter plot comparing actual vs predicted house prices to visually evaluate model accuracy.
 
 ---
 
-## Setup Instructions
-1. Clone or download the project repository
-2. Install required dependencies:
-3. Run notebooks in the following order:
-- `1_data_cleaning.ipynb`
-- `2_eda.ipynb`
-- `3_analysis.ipynb`
+##  How to Run
+
+1. Install dependencies:
+pip install pandas numpy matplotlib scikit-learn
+
+
+2. Run the script:
+python 9th_task.py
+
 
 ---
 
-## Quality Standards Checklist
-- End-to-end business analysis completed
-- Dataset size meets internship requirements
-- Multiple analysis techniques applied
-- Professional visualizations included
-- Complete documentation provided
-- Business insights and implementation plan included
+## 📌 Conclusion
+
+- Random Forest performed best among all models.
+- Area and Location are dominant factors influencing house price.
+- Ensemble models provide better generalization compared to single regression models.
+- The project demonstrates a complete machine learning workflow from preprocessing to evaluation.
 
 ---
-
-## Author
-**Ishika Ambagade**  
-Final Year Engineering Student  
-Business Analytics Internship Project
 
 
 
