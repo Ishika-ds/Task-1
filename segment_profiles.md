@@ -1,71 +1,91 @@
-Customer Segment Profiles
-Overview
+# Customer Segmentation Profiles
 
-Customer segmentation was performed using K-Means clustering (3 clusters) after feature scaling. Hierarchical clustering and DBSCAN were also applied for comparison. Final segmentation is based on K-Means results for business interpretation and model building.
+## Project Overview
 
-Segment 0 – Loyal & Stable Customers
-Characteristics:
+Customer segmentation was performed using clustering algorithms to group customers based on behavioral patterns. The primary algorithm used for final segmentation was K-Means clustering, with Hierarchical Clustering and DBSCAN applied for comparison.
 
-Higher tenure
+The objective was to create meaningful customer groups and support segment-specific predictive modeling.
 
-Lower churn rate
+---
 
-Consistent service usage
+## Segmentation Methodology
 
-Stable behavioral patterns
+- Data preprocessing included handling missing values and encoding categorical variables.
+- Features were standardized using StandardScaler.
+- The optimal number of clusters was determined using the Elbow Method.
+- K-Means clustering was applied with 3 clusters.
+- Hierarchical Clustering and DBSCAN were used for comparative analysis.
 
-Interpretation:
+---
 
-These customers are long-term users who show loyalty and consistent engagement with the service. Their probability of churn is relatively low.
+## Segment 0 – Loyal & Stable Customers
 
-Business Value:
+### Key Characteristics
 
-High retention value and predictable revenue stream.
+- Higher customer tenure
+- Lower churn probability
+- Consistent service usage
+- Stable behavioral patterns
 
-Segment 1 – At-Risk Customers
-Characteristics:
+### Business Interpretation
 
-Lower tenure
+These customers demonstrate loyalty and long-term engagement. They contribute to steady revenue and have a lower likelihood of churn.
 
-Higher churn rate
+### Business Value
 
-Possible dissatisfaction or low engagement
+- High customer lifetime value
+- Strong retention stability
+- Potential brand advocates
 
-Higher volatility in usage patterns
+---
 
-Interpretation:
+## Segment 1 – At-Risk Customers
 
-These customers are more likely to churn and require immediate retention strategies.
+### Key Characteristics
 
-Business Risk:
+- Lower tenure
+- Higher churn rate
+- Lower engagement levels
+- Unstable usage patterns
 
-Revenue loss if proactive measures are not taken.
+### Business Interpretation
 
-Segment 2 – Growth Opportunity Customers
-Characteristics:
+This segment represents customers who are more likely to churn. Immediate intervention strategies are necessary to reduce potential revenue loss.
 
-Medium tenure
+### Business Risk
 
-Moderate churn probability
+- Increased churn probability
+- Revenue leakage if not addressed
 
-Potential for upselling
+---
 
-Active but not fully engaged
+## Segment 2 – Growth Opportunity Customers
 
-Interpretation:
+### Key Characteristics
 
-These customers are not fully loyal yet but show potential for long-term retention with the right incentives.
+- Medium tenure
+- Moderate churn probability
+- Active but not fully loyal
+- Upselling potential
 
-Business Opportunity:
+### Business Interpretation
 
-High potential for cross-selling and premium upgrades.
+These customers show potential for long-term retention with proper engagement strategies. They are ideal candidates for marketing campaigns and premium upgrades.
 
-Clustering Methodology
+### Business Opportunity
 
-Data scaled using StandardScaler
+- Cross-selling opportunities
+- Conversion to higher-value plans
+- Increased engagement potential
 
-K-Means applied with optimal cluster selection using Elbow Method
+---
 
-Hierarchical clustering and DBSCAN used for comparison
+## Summary
 
-Final segmentation selected based on interpretability and cluster balance
+The segmentation process successfully divided customers into three meaningful groups:
+
+1. Loyal & Stable Customers
+2. At-Risk Customers
+3. Growth Opportunity Customers
+
+These segments enable targeted business strategies, improve predictive modeling accuracy, and support data-driven decision-making.
