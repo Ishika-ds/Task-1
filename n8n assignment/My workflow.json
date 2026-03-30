@@ -1,0 +1,316 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -96
+      ],
+      "id": "16288658-c6fd-47d4-815a-ab93580b0114",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1120,
+        -96
+      ],
+      "id": "89fa903d-dfaf-4132-aeed-1b368a908bc3",
+      "name": "Wait",
+      "webhookId": "9448234c-6f4d-4b20-b9d3-6af10b03d454"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "93c54d85-95ad-4a25-9997-8d01a0bc8637",
+              "name": "name",
+              "value": "John",
+              "type": "string"
+            },
+            {
+              "id": "04a92c18-4348-4c9b-8971-0f2390591486",
+              "name": "username",
+              "value": "john_ai",
+              "type": "string"
+            },
+            {
+              "id": "d878f5d2-29eb-4f94-9625-0f05676c5791",
+              "name": "followers",
+              "value": 1200,
+              "type": "number"
+            },
+            {
+              "id": "fcb7960a-c340-46b2-bc5d-91572b81a086",
+              "name": "bio",
+              "value": "I run a small marketing agency",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        -96
+      ],
+      "id": "8239483f-ab40-4dea-a5c1-b52a295be9c4",
+      "name": "Set(Lead data)"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "e278e7be-9c0a-4c79-a38a-4d1e32251e8d",
+              "leftValue": "={{ $json.followers }}",
+              "rightValue": 500,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            },
+            {
+              "id": "052a4a4a-9e4a-4234-b308-19b07844c506",
+              "leftValue": "={{ $json.followers }}",
+              "rightValue": 5000,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        448,
+        -96
+      ],
+      "id": "ddd9f793-8816-423d-afe5-2bbddf373f59",
+      "name": "If(Filter leads)"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "dd20a49d-3aed-4a67-ab7e-79fa862327d3",
+              "name": "dm_message",
+              "value": "=Hi {{$json.name}}, I help businesses automate lead generation and marketing using AI. Would love to connect.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        672,
+        -96
+      ],
+      "id": "61796e51-ef44-4c00-8f09-0ed2ce60f043",
+      "name": "Set (DM Message)"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9399cd9e-7bf2-44aa-8cde-56d822979340",
+              "name": "status ",
+              "value": "DM sent ",
+              "type": "string"
+            },
+            {
+              "id": "0314294e-ee68-45b5-b337-a2af75f4388e",
+              "name": "date",
+              "value": "206-03-30",
+              "type": "string"
+            },
+            {
+              "id": "76abff23-6e2b-4953-81a6-2c8aaa3cfcc2",
+              "name": "platform ",
+              "value": "Twitter",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        896,
+        -96
+      ],
+      "id": "f26277f7-80df-4ac0-bc0c-7711250ad318",
+      "name": "Set (Log DM)"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "277ef059-55d3-4f33-940d-c420868ba90c",
+              "name": "followup_message",
+              "value": "=Just checking in {{$json.name}}, let me know if you're interested in AI automation for your business.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1344,
+        -96
+      ],
+      "id": "2ab0dbb0-43ba-4462-9501-459540157518",
+      "name": "Set (Follow-up message)"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8cca71f5-1810-416b-b42f-4cb2244043c6",
+              "name": "followup_status",
+              "value": "Follow-up Sent",
+              "type": "string"
+            },
+            {
+              "id": "e837f8a9-4059-4ec9-9fdc-21f5e1f644d6",
+              "name": "followup_date",
+              "value": "2026-03-30",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1568,
+        -96
+      ],
+      "id": "9ee936a1-29d0-4528-a518-fc65bfd45122",
+      "name": "Set (Log Follow-up)"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Set(Lead data)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Set (Follow-up message)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set(Lead data)": {
+      "main": [
+        [
+          {
+            "node": "If(Filter leads)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If(Filter leads)": {
+      "main": [
+        [
+          {
+            "node": "Set (DM Message)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set (DM Message)": {
+      "main": [
+        [
+          {
+            "node": "Set (Log DM)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set (Log DM)": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set (Follow-up message)": {
+      "main": [
+        [
+          {
+            "node": "Set (Log Follow-up)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "5ead3f32-5531-4bbf-90e0-673cdab9f176",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b0efa958d82eb09b70de71a5f5008da857afef9c02eaa51590ed4ea0f9f192a1"
+  },
+  "id": "zne6TtsYIwkLHeBb",
+  "tags": []
+}
