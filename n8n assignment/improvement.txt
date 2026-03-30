@@ -1,5 +1,5 @@
 
-**What I would improve with more time or a paid budget**
+What I would improve with more time or a paid budget
 
 If I had more time or a paid budget, I would improve this workflow by connecting real APIs instead of using simulated data. For example, I would integrate social media APIs or lead scraping tools to automatically collect real leads. I would also connect an AI API like OpenAI or Groq to generate highly personalized DM messages based on the user’s bio, posts, or industry.
 
